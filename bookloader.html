@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&display=swap" rel="stylesheet">
+</head>
+<body style="width: 100%;height: 100vh; background: #F5F5F5; overflow: hidden;">
+    <div class="loader">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="shadow"></div>
+        <div class="shadow"></div>
+        <div class="shadow"></div>
+        <div class="loaderAlphabets">
+            <span>L</span>
+            <span>O</span>
+            <span>A</span>
+            <span>D</span>
+            <span>I</span>
+            <span>N</span>
+            <span>G</span>
+        </div>
+    </div>
+</body>
+
+<style>
+    .loader{
+        width: 200px;
+        height: 60px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .circle{
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        border-radius: 50%;
+        background-color: #C1292E;
+        left: 15%;
+        transform-origin: 50%;
+        animation: circle 1s alternate infinite ease;
+    }
+    @keyframes circle{
+        0%{
+            top: 60px;
+            height: 5px;
+            border-radius: 50px 50px 25px 25px;
+            transform: scaleX(1.7);
+        }
+        40%{
+            height: 20px;
+            border-radius: 50%;
+            transform: scaleX(1);
+        }
+        100%{
+            top: 0%;
+        }
+    }
+    .circle:nth-child(2){
+        left: 45%;
+        animation-delay: .5s;
+    }
+    .circle:nth-child(3){
+        left: auto;
+        right: 15%;
+        animation-delay: .6s;
+    }
+    .shadow{
+        width: 20px;
+        height: 4px;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.3);
+        position: absolute;
+        top: 62px;
+        transform-origin: 50%;
+        z-index: -1;
+        left: 15%;
+        filter: blur(1px);
+        animation: shadow 1s alternate infinite ease;
+    }
+    @keyframes shadow{
+        0%{
+            transform: scaleX(1.5);
+        }
+        40%{
+            transform: scaleX(1);
+            opacity: .7;
+        }
+        100%{
+            transform: scaleX(0.2);
+            opacity: 0.4;
+        }
+    }
+    .shadow:nth-child(4){
+        left: 45%;
+        animation-delay: .5s;
+    }
+    .shadow:nth-child(5){
+        left: auto;
+        right: 15%;
+        animation-delay: .6s;
+    }
+    .loaderAlphabets{
+        width: 100%;
+        position: absolute;
+        top: 75px; 
+        font-family: ''Noto Serif', serif';
+        font-size: 30px; 
+        color: #C1292E;
+        left: 15px;
+        overflow: hidden;
+        -webkit-box-reflect: below -15px linear-gradient(rgba(255, 255, 255, 0),rgba(255, 255, 255, 0.2));
+        animation: downwards 7s infinite ease;
+        
+        
+    }
+    @keyframes downwards{
+        0%{
+            top: 60px;
+            transform: scaleY(0);
+            opacity: 0;
+        }
+
+        50%, 95%{
+            top:75px;
+            transform: scaleY(1);
+            opacity: 1;
+        }
+    }
+    @keyframes updown{
+        10%{
+            transform: rotateX(-2turn) scaleX(0.8);
+
+        }
+        50%{
+            transform: scale(1);
+        }
+        
+    }
+    .loaderAlphabets:nth-child(6){
+        animation-delay: 1s;
+    }
+</style>
